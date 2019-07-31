@@ -1,0 +1,8 @@
+create view vassetdata as
+Select a.assetNum, a.Description, f.Description as assetkat, a.empId, b.fullname, a.createdBy, 
+a.createdDate, a.quantity, a.unit, 
+d.Description as assetStat, c.description as location
+from assetdata as a inner join employee as b on a.empId = b.empId
+inner join location as c on a.location = c.location
+inner join assetstat as d on a.assetStat = d.assetStatus
+inner join assetkat as f on a.assetKat = f.assetKat
